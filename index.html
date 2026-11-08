@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101114" />
+  <title>ASHEN OATH — The Hollow Knight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <div id="world" aria-label="3D dark fantasy arena"></div>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><div><div class="eyebrow">A SOULS-LIKE DUEL</div><div class="brand-name">ASHEN OATH</div></div></div>
+      <div class="top-right"><div class="boss-tag"><span class="boss-dot"></span> THE HOLLOW KNIGHT</div><button id="sound-btn" class="icon-btn" aria-label="Toggle sound">♫</button><button id="pause-btn" class="icon-btn" aria-label="Pause game">Ⅱ</button></div>
+    </header>
+    <section class="combat-hud" aria-label="Combat status">
+      <div class="player-card"><div class="portrait">◈</div><div class="meters"><div class="meter-label"><span>THE ASHEN WANDERER</span><span id="health-value">100</span></div><div class="meter health"><i id="health-fill"></i></div><div class="meter-label secondary"><span>STAMINA</span><span id="stamina-value">100</span></div><div class="meter stamina"><i id="stamina-fill"></i></div></div></div>
+      <div class="boss-card"><div class="boss-meter-label"><span>THE HOLLOW KNIGHT</span><span id="boss-phase">PHASE I</span></div><div class="meter boss-health"><i id="boss-fill"></i></div></div>
+    </section>
+    <div class="arena-label"><span class="line"></span><span>THE SUNKEN SANCTUM</span><span class="line"></span></div>
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <div id="center-prompt" class="center-prompt"><div class="prompt-kicker">A WARRIOR'S LAST OATH</div><h1>Face the<br/><em>Hollow Knight.</em></h1><p>Steel your resolve. Read his tells.<br/>Every opening is earned.</p><button id="begin-btn" class="primary-btn">ENTER THE ARENA <span>↗</span></button><div class="prompt-foot">WASD / ARROWS TO MOVE · SPACE TO DODGE</div></div>
+    <div id="result" class="result hidden"><div class="result-kicker">THE DUEL IS OVER</div><h2 id="result-title">VICTORY</h2><p id="result-copy"></p><button id="retry-btn" class="primary-btn">FIGHT AGAIN <span>↻</span></button></div>
+    <div id="pause-overlay" class="pause-overlay hidden"><div class="pause-card"><span class="prompt-kicker">THE WORLD HOLDS ITS BREATH</span><h2>PAUSED</h2><p>Take a moment. The duel will wait.</p><button id="resume-btn" class="primary-btn">RESUME DUEL <span>▶</span></button></div></div>
+    <div class="controls-hint"><span class="key">W A S D</span> MOVE <i></i><span class="key">SPACE</span> DODGE <i></i><span class="key">J</span> STRIKE <i></i><span class="key">K</span> PARRY <i></i><span class="key">L</span> GUARD</div>
+    <div class="mobile-controls" aria-label="Touch controls">
+      <div id="joystick" class="joystick"><div class="joy-ring"></div><div id="joy-knob" class="joy-knob"></div><span class="joy-label">MOVE</span></div>
+      <div class="action-pad"><button class="action-btn dodge" data-action="dodge"><span>✧</span><small>DODGE</small></button><button class="action-btn attack" data-action="attack"><span>⚔</span><small>STRIKE</small></button><button class="action-btn parry" data-action="parry"><span>◈</span><small>PARRY</small></button><button class="action-btn shield" data-action="shield"><span>⬡</span><small>GUARD</small></button></div>
+    </div>
+    <div class="bottom-note"><span class="status-pip"></span><span id="status-text">A foe stirs in the mist…</span></div>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
